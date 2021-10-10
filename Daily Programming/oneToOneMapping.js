@@ -9,21 +9,20 @@
  * Solution approach assumes both strings will always be of equal length and non-empty
  */
 
-const hasOneToOneMapping = (str1,str2) => {
-    let mapping = Array.from({length:256}).fill(0);
+const hasOneToOneMapping = (str1, str2) => {
+  let mapping = Array.from({ length: 256 }).fill(0);
 
-    for(let i =0; i<str1.length; i++){
-        if(mapping[str1[i].charCodeAt()] === 0){
-            mapping[str1[i].charCodeAt()] = str2[i];
-        }
-        else {
-            if(mapping[str1[i].charCodeAt()] !== str2[i]){
-                return false;
-            }
-        }
+  for (let i = 0; i < str1.length; i++) {
+    if (mapping[str1[i].charCodeAt()] === 0) {
+      mapping[str1[i].charCodeAt()] = str2[i];
+    } else {
+      if (mapping[str1[i].charCodeAt()] !== str2[i]) {
+        return false;
+      }
     }
+  }
 
-    return true;
-}
+  return true;
+};
 
-console.log(hasOneToOneMapping("foo","bar"));
+console.log(hasOneToOneMapping("foo", "bar"));
